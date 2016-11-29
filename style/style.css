@@ -1,0 +1,41 @@
+
+body {
+    font: 13pt/1.5 "Helvetica Neue", Arial, sans-serif;
+    background-image: url('https://source.unsplash.com/category/nature');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#leftBar {
+    font-family: 'Libre Franklin', sans-serif;
+    background-color: rgba(0,0,0,0.7);
+    text-align: center;
+    width: 30%;
+}
+
+#showTime {
+    font-size: 180px;
+    font-family: 'Libre Franklin', sans-serif;
+    color: white;
+}
+
+#showGreetings{
+    color: white;
+    font-size: 40px;
+}
+
+#menu {
+    height: 200px;
+    width: 30%;
+    background-color: rgba(0,0,0,0.7);
+    text-align: center;
+}
+
+#menuButton {
+    color: white;
+    cursor: hand;
+    padding: 2%;
+    background-color: rgba(0,0,0,0.2);
+    font-size:20px;
+}
+
