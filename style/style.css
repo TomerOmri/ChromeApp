@@ -10,7 +10,6 @@ body {
     font-family: 'Libre Franklin', sans-serif;
     background-color: rgba(0,0,0,0.7);
     text-align: center;
-    width: 30%;
 }
 
 #showTime {
@@ -25,15 +24,15 @@ body {
 }
 
 #menu {
-    height: 200px;
-    width: 30%;
-    background-color: rgba(0,0,0,0.7);
-    text-align: center;
+    margin-top: 3;
+    padding: 2%;
+    background-color: rgba(0,0,0,0.2);
 }
 
 #menuButton {
     color: white;
     cursor: hand;
+    margin: 2%;
     padding: 2%;
     background-color: rgba(0,0,0,0.2);
     font-size:20px;
