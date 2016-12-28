@@ -2,26 +2,80 @@
  <head>
   <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
   <title>Si new tab</title>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="style/style.css" rel="stylesheet">
+     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" integrity="sha384-HzUaiJdCTIY/RL2vDPRGdEQHHahjzwoJJzGUkYjHVzTwXFQ2QN/nVgX7tzoMW3Ov" crossorigin="anonymous">
+
 
  </head>
  <body>
 
+ <a class="btn btn-danger" id="cleanCookie">Clean Cookie</a>
+ <a id="changeSettings" class="btn btn-default">App Settings</a>
+ <div class="settings">
 
+     <div class="panel panel-default">
+         <div class="panel-heading">Si - Settings</div>
+         <h2>Hi there!</h2>
+         <div class="panel-body" style="height: 100px">
+              please fill up some information so we can greet you properly
+             on every time you open a new tab.
+         </div>
+
+
+         <form class="form-horizontal innerFormSize" _lpchecked="1">
+             <fieldset>
+                 <div class="form-group">
+                     <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                     <div class="col-lg-10">
+                         <input type="text" class="form-control" id="inputEmail" placeholder="Email" autocomplete="off">      </div>
+                 </div>
+
+                 <div class="form-group">
+                     <label for="userName" class="col-lg-2 control-label">Name</label>
+                     <div class="col-lg-10">
+                         <input type="text" class="form-control" id="userName" placeholder="Name" autocomplete="off" >
+                     </div>
+                 </div>
+
+
+
+                 <div class="form-group">
+                     <label class="col-lg-2 control-label">Photo Source</label>
+                     <div class="col-lg-10">
+                         <button type="button" class="btn btn-info unsplash" data-toggle="tooltip"
+                                 data-placement="bottom" title="" data-original-title="get amazing wallpapers from the web">UN-Splash</button>
+
+
+                         <button type="button" class="btn btn-default local" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Browser from your own gallery">
+                             Browse from a Folder</button>
+
+                     </div>
+                 </div>
+
+
+             </fieldset>
+
+         </form>
+
+
+
+         <div class="modal-footer">
+             <button id="buttonClose" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+             <button id="buttonSave" type="button" class="btn btn-primary">Save changes</button>
+         </div>
+     </div>
+
+ </div>
   <div id="leftBar">
+
+
+
+
+
           <div id="showTime"> </div>
           <div id="showGreetings">Hello <span id="nameOfUser">Someone</span></div>
 
-      <div id="menu">
-          <span id="menuButton" onmouseover="highLightButton(this)" onmouseleave="NOhighLightButton(this)">
-               Check Mail</span>
 
-          <span id="menuButton" class="addTile" onmouseover="highLightButton(this)" onmouseleave="NOhighLightButton(this)">
-              <span style="font-weight: bold; font-size: 30px;"> + </span></span>
-
-
-      </div>
 
   </div>
 
@@ -29,6 +83,7 @@
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
  <script src="home.js"></script>
 
  </body>

@@ -13,7 +13,7 @@ body {
 }
 
 #showTime {
-    font-size: 180px;
+    font-size: 80px;
     font-family: 'Libre Franklin', sans-serif;
     color: white;
 }
@@ -38,3 +38,17 @@ body {
     font-size:20px;
 }
 
+.settings{
+    width: 50%;
+    height: 50px;
+    margin: 5% auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.innerFormSize{
+    padding-right: 10%;
+}

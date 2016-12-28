@@ -1,38 +1,27 @@
 $(document).ready(function(){
+
+    $('.settings').hide();
+    $('#leftBar').hide();
+    onInitApp();
+
+
     var date = new Date();
     var hour = date.getHours().toString();
     var min = date.getMinutes().toString();
+    if (date.getMinutes() < 9)
+        min = '0' + min;
     var str = hour + ":" + min;
 
     $("#showTime").append(str);
 
 
-   // $('p span').css('color' ,'red');
+$("#nameOfUser").html($.cookie('userName'));
 
 
-    $('ul#list li:first').css('color' ,'red');
 
-
-$("#nameOfUser").dblclick(function(){
-    var newName = prompt("Please enter your name");
-    $("#nameOfUser").empty().append(newName);
-});
 
 });
 
-
-
-function highLightButton(objectThatWasPressed) {
-
-    objectThatWasPressed.style.backgroundColor = "black";
-
-
-}
-
-function NOhighLightButton(objectThatWasPressed) {
-
-    objectThatWasPressed.style.backgroundColor = "rgba(0,0,0,0.2)";
-}
 
 $(".addTile").click(function(){
    var nameOfTile = prompt("Enter name of tile:");
@@ -57,4 +46,65 @@ console.log(fullLinkPath);
 
    $('#menu').append(aLink);
 
+});
+
+
+$("#buttonSave").click(function(){
+   var userEmail = $('#inputEmail').val();
+   var userName = $('#userName').val();
+
+    setCookie(userEmail, userName);
+
+    $("#nameOfUser").html(userName);
+    $('.settings').hide();
+    $('#leftBar').fadeToggle( "slow", "linear" );
+});
+
+
+function setCookie(userEmailString, userNameString) {
+
+
+    $.cookie('name', 'siCookie');
+    $.cookie('userEmail', userEmailString);
+    $.cookie('userName', userNameString);
+
+    console.log(document.cookie);
+
+}
+
+function onInitApp() {
+
+    console.log(document.cookie);
+
+
+
+    if (!$.cookie('name')) {
+        //no cookie
+        $('#leftBar').hide();
+        $('#buttonClose').hide();
+        $('.settings').fadeToggle( "slow", "linear" );
+
+    } else {
+        //have cookie
+        $('.settings').hide();
+        $('#leftBar').fadeToggle( "slow", "linear" );
+    }
+}
+
+$('#cleanCookie').click(function(){
+    var x = $.removeCookie('name');
+    console.log(x);
+    console.log(document.cookie);
+    location.reload();
+});
+
+$('#changeSettings').click(function(){
+    $('#leftBar').fadeToggle( "slow", "linear" );
+    $("#userName").val($.cookie('userName'));
+    $('.settings').fadeToggle( "slow", "linear" );
+});
+
+$('#buttonClose').click(function(){
+    $('.settings').fadeToggle( "slow", "linear" );
+    $('#leftBar').fadeToggle( "slow", "linear" );
 });
