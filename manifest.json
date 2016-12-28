@@ -7,14 +7,22 @@
     "64": "icon_64.png",
     "48": "icon_48.png"
   },
+  
+  "manifest_version": 2,
   "incognito": "split",
   "chrome_url_overrides": {
     "newtab": "home.html"
   },
-  "permissions": [
-    "bookmarks",
-    "https://mail.google.com/",
-    "topSites"
-  ],
-  "manifest_version": 2
+  "background":
+    {
+        "scripts": ["jquery.min.js", "jquery.cookie.js", "background.js", "home.js"]
+    },
+  "content_scripts": 
+  [ {
+    "js": [ "jquery.min.js", "jquery.cookie.js", "background.js","home.js" ],
+    "matches": [ "http://*/*", "https://*/*"]
+  }],
+  
+  "permissions": ["tabs", "http://*/*", "https://*/*", "activeTab"]
+ 
 }
